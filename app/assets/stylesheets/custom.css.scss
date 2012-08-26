@@ -1,5 +1,8 @@
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+$grayLight: #999;
+
 /* universal */
 
 html {
@@ -27,7 +30,7 @@ textarea {
 }
 
 /* typography */
-$grayLight: #999;
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -80,7 +83,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #$grayLight;
+  color: $grayLight;
   a {
     color: #555;
     &:hover {
