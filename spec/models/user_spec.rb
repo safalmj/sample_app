@@ -12,26 +12,32 @@
 require 'spec_helper'
 
 describe User do
-	before { @user = User.new(:name => "Safal", :email => "safal@gmail.com") }
+	
+	before { @user = User.new(:name => 'Safal M Joshi', :email => "safalmj@gmail.com") }
 
-	subject { @user }
-	it { should respond_to(:name)}
-	it { should respond_to(:email)} 
+	subject { @user}
 
-	it { should be_valid}
+	it { should respond_to(:name) }
+	it { should respond_to(:email) }
 
-	describe "when user is not present" do 
-		before { @user.name = " "}
-		it { should_not be_valid }
-	end
-
-	describe "when email is not present" do 
-		before { @user.email = " "}
-		it { should_not be_valid }
+	it {should be_valid}
+    
+    describe "When user name is not present" do
+       before { @user.name = " "}
+       it { should_not be_valid }
     end
 
-    describe "when name is too long" do
-    	before { @user.name = "a"*51}
-    	it { should_not be_valid }
+    describe "When user email is not present" do 
+        before { @user.email = " " }
+        it { should_not be_valid }
     end
+
+    describe "When the name is too long" do 
+        before { @user.name = "a" * 51}
+        it { should_not be_valid }
+    end
+    
 end
+
+
+
